@@ -62,20 +62,38 @@ export default function BirthdayCard() {
 
         body {
           font-family: 'Quicksand', sans-serif;
-          text-align: center;
-          background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
           margin: 0;
           padding: 0;
-          overflow-x: hidden;
+          background: linear-gradient(to bottom, #fdfcfb, #e2d1c3);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          text-align: center;
+          overflow: hidden;
         }
+
+        .card {
+          background: #fff;
+          border-radius: 16px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+          padding: 40px;
+          max-width: 600px;
+          width: 90%;
+        }
+
         h1 {
           color: #ff6f61;
-          font-size: 3.5rem;
-          margin-top: 20px;
+          font-size: 3rem;
+          margin-bottom: 20px;
         }
-        .content {
-          padding: 20px;
+
+        p {
+          font-size: 1.2rem;
+          color: #5d4037;
+          line-height: 1.6;
         }
+
         button {
           font-size: 1.2rem;
           padding: 12px 24px;
@@ -87,21 +105,25 @@ export default function BirthdayCard() {
           transition: background-color 0.3s ease, transform 0.2s ease;
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
+
         button:hover {
           background-color: #e55c50;
           transform: scale(1.05);
         }
+
         .message {
           font-size: 1.4rem;
           margin-top: 20px;
           color: #5d4037;
           display: ${isMessageVisible ? 'block' : 'none'};
         }
+
         .footer {
-          margin-top: 50px;
+          margin-top: 30px;
           font-size: 0.9rem;
           color: #9e9e9e;
         }
+
         .firecracker {
           position: fixed;
           width: 6px;
@@ -111,6 +133,7 @@ export default function BirthdayCard() {
           border-radius: 50%;
           box-shadow: 0 0 10px #ff6f61;
         }
+
         @keyframes firecracker-burst {
           0% {
             transform: scale(1);
@@ -121,6 +144,7 @@ export default function BirthdayCard() {
             opacity: 0;
           }
         }
+
         .paper-burst {
           position: fixed;
           width: 10px;
@@ -129,6 +153,7 @@ export default function BirthdayCard() {
           border-radius: 50%;
           animation: paper-burst-fly 1.5s ease-out infinite;
         }
+
         @keyframes paper-burst-fly {
           0% {
             transform: translate(0, 0) scale(1);
@@ -141,38 +166,40 @@ export default function BirthdayCard() {
         }
       `}</style>
 
-      <h1>🎉 Happy Birthday! 🎉</h1>
-      <div className="content">
-        <p>Click the button below to reveal your surprise message!</p>
-        <button onClick={revealMessage}>Open Your Card</button>
-        <div className="message">
-          <p>Dear Aditi,</p>
-          <p>
-            I'm so grateful to have you in my life. All the little things you
-            do make this world a better place!
-          </p>
-          <p>
-            On this special day, I wish you nothing but happiness, love and all
-            the affection in the world 🌟
-          </p>
-          <p>
-            Be the nice, sweet, cute, and unfiltered person you are - the world
-            needs more of that! Enjoy your day to the fullest!!
-          </p>
-          <button
-            onClick={() =>
-              window.open(
-                'https://connections.swellgarfo.com/game/-OFX7YX0kX6BTE0HlGs5',
-                '_blank'
-              )
-            }
-          >
-            🎁 Surprise 🎁
-          </button>
+      <div className="card">
+        <h1>🎉 Happy Birthday! 🎉</h1>
+        <div className="content">
+          <p>Click the button below to reveal your surprise message!</p>
+          <button onClick={revealMessage}>Open Your Card</button>
+          <div className="message">
+            <p>Dear Aditi,</p>
+            <p>
+              I'm so grateful to have you in my life. All the little things you
+              do make this world a better place!
+            </p>
+            <p>
+              On this special day, I wish you nothing but happiness, love, and all
+              the affection in the world 🌟
+            </p>
+            <p>
+              Be the nice, sweet, cute, and unfiltered person you are - the world
+              needs more of that! Enjoy your day to the fullest!!
+            </p>
+            <button
+              onClick={() =>
+                window.open(
+                  'https://connections.swellgarfo.com/game/-OFX7YX0kX6BTE0HlGs5',
+                  '_blank'
+                )
+              }
+            >
+              🎁 Surprise 🎁
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="footer">
-        <p>Made with a lot of ❤️ for you!</p>
+        <div className="footer">
+          <p>Made with a lot of ❤️ for you!</p>
+        </div>
       </div>
     </div>
   );
